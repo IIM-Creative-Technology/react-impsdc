@@ -1,0 +1,11 @@
+@import "../helpers/variables";
+
+.text-input{
+    background: $color-input;
+    resize: none;
+    color: $color-font;
+    border: solid 1px $color-input;
+    width: 100%;
+    outline: none;
+    font-size: $font-simple;
+}
