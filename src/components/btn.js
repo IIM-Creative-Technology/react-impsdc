@@ -1,12 +1,13 @@
 import "../scss/components/btn-component.scss"
+import { HashLink as Link } from 'react-router-hash-link';
 
-function Btn({content, inverse}){
-
+function Btn({content, inverse, slug}){
     return (
         <div>
-            <button className={ inverse ? "main-btn-component inverse" : "main-btn-component"} link="/">
+            
+            <Link className={ inverse ? "main-btn-component inverse" : "main-btn-component"} to={slug}>
                 {content}
-            </button>
+            </Link>
         </div>
     )
 }
