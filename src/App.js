@@ -1,5 +1,5 @@
 import './scss/helpers/_variables.scss'
-import './scss/pages/container-component.scss'
+import './scss/views/container-component.scss'
 import Routeur from "./routes/Routeur"
 
 export default function App() {

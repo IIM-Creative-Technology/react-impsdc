@@ -1,16 +1,34 @@
 import React, {useEffect, useState} from "react"
 import "../scss/components/text-input-component.scss"
 
-function Input({placeholder}){
+/* export default class SelectInput extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {  
+            placeholder: props.placeholder  
+        }  
+    }
 
-    return (
-        <div>
-           <input class="text-input-component"
-           placeholder={placeholder}
-           required />
-        </div>
-    )
-}
+    state = {
+            city: ''
+        }
 
+    handleLangChange = () => {
+        var city = this.city.value;
+        this.props.onSelectCity(city);            
+    }
 
-export default Input;
+    render() {
+        return (
+            <div>
+               <input ref={(ref) => this.city = ref} 
+                valueField='city' textField="city"
+                className={"text-input-component"}
+                placeholder={placeholder}
+                onChange={this.handleLangChange}
+                required 
+                />
+            </div>
+        )
+    }
+} */

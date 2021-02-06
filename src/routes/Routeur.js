@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import index from "../pages/index";
-import quizz from "../pages/Quizz";
+import index from "../views/index";
+import quizz from "../views/Quizz";
 
 const Routeur = () => (
   <Router>
