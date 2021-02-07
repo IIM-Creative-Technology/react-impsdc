@@ -53,7 +53,7 @@ export default class QuizzPlayer extends React.Component {
         axios.post('/playerScore/create', this.state.playerScoreData)
             .then(response => {
                 this.setState({ quizzEndLoading: false })
-                this.props.history.push(`/results/${response.data.playerScoreId}`)
+                this.props.history.push(`/quizz/results/${response.data.playerScoreId}`)
             }).catch((err) => {
                 console.error(err)
             })
