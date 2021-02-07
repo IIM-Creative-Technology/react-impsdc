@@ -4,9 +4,15 @@ import { HashLink as Link } from 'react-router-hash-link';
 function Btn({content, inverse, slug}){
     return (
         <div>
-            <Link className={ inverse ? "main-btn-component inverse" : "main-btn-component"} to={slug}>
-                {content}
-            </Link>
+            {slug !== null ? 
+                <Link className={ inverse ? "main-btn-component inverse" : "main-btn-component"} to={slug}>
+                  {content}
+                </Link>
+            :
+                <button className={ inverse ? "main-btn-component inverse" : "main-btn-component"}>
+                    {content}
+                </button>
+            }
         </div>
     )
 }

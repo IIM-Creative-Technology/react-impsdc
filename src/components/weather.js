@@ -1,14 +1,13 @@
-import React from "react";
-import axios from "axios";
-import "../scss/components/weather/weather-result-component.scss";
-import windLogo from "../static/wind.svg";
+import React from "react"
+import axios from "axios"
+import "../scss/components/weather/weather-result-component.scss"
+import windLogo from "../static/wind.svg"
 const logo = require("../static/wind.svg");
-require('dotenv').config()
+
 export default class Weather extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            success: false,
             city : null,
             temp : null,
             wind : null,
@@ -23,11 +22,10 @@ export default class Weather extends React.Component {
 
     fetchData = () => {
          setTimeout(() => {
-            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.field.value}&appid=${process.env.REACT_APP_WEATHER_APP_ID}`)
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.field.value}&appid=af7c7272c5f0d3258228ce914b1873a5`)
                 .then((res) => {
                     if(res){
                         this.setState({
-                            success:true,
                             city : res.data.name,
                             temp : res.data.main.temp - 273.15,
                             wind : res.data.wind.speed,
@@ -36,23 +34,26 @@ export default class Weather extends React.Component {
                                 description : res.data.weather[0].description,
                                 icon : res.data.weather[0].icon
                             }
-                            
                         })
+
+                        console.log(this.state)
                     }
                 })
-                .catch((error) => {
+                .catch(function (error) {
                     console.log(error);
-                    this.setState({
-                        success:false
-                    })
                 });
 
           }, 1000);
     }
 
-    round = (str) => {
-        return Math.round((str + Number.EPSILON) * 100) / 100
-        
+    degres = (str) => {
+        let degres = str.toString()
+        if( degres < 3){
+            return degres.substr(0,3)
+        }
+        else{
+            return degres
+        }
     }
       
    render() {
@@ -67,27 +68,24 @@ export default class Weather extends React.Component {
                 />
             </div>
            <div className={"weather-result-component"}>
-                {this.state.city === null ? 
-                    <p>None city has been write</p>
-                
-                :this.state.success ? 
+                {this.state.city ? 
                    <div>
                         <p className={"city-title"}>{this.state.city}</p>
                         <div className={'wrapper-result'}>
                            <div className={"item-result"}>
                            <img src={"https://openweathermap.org/img/wn/" + this.state.weather.icon + "@4x.png"} alt={this.state.weather.main}/>
                             <p>{this.state.weather.main}</p>
-                            <p>{this.round(this.state.temp)}°C</p>
+                            <p>{this.degres(this.state.temp)}°C</p>
                            </div>
                            <div className={"item-result"}>
                             <img src={windLogo} alt="wind icon" />
                             <p>{this.state.wind} m/s</p>
                            </div>
                         </div>
-                        <p className={"item-description"}>{this.state.weather.description}</p>
+                        <p>{this.state.weather.description}</p>
                    </div>
                   
-                : <p>This city does not exist</p>
+                : ""
                 }
                 
            </div>

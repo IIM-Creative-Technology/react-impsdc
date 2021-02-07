@@ -1,0 +1,58 @@
+@import "../../helpers/variables";
+
+.file-input-component{
+  text-align: center;
+  margin: 15px 0;
+  input{
+    display: none;
+  }
+  label{
+    display: block;
+    color: #FFF;
+    background: $color-brand;
+    padding: .3rem .6rem;
+    font-size: 115%;
+    width: 60%;
+    margin: auto;
+    border-radius: $radius;
+    cursor: pointer;
+
+    i{
+        font-size: 125%;
+        margin-right: .3rem;
+        &:hover{
+            i{
+                animation: shake .35s;
+            }
+        }
+    }
+}
+  img{
+    max-width: 175px;
+    display: none;
+  }
+  span{
+    display: none;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+// animation keyframes
+@keyframes shake{
+  0%{
+    transform: rotate(0deg)
+  }
+  25%{
+      transform: rotate(10deg)
+  }
+  50%{
+      transform: rotate(0deg)
+  }
+  75%{
+      transform: rotate(-10deg)
+  }
+  100%{
+      transform: rotate(0deg)
+  }
+}
