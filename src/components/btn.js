@@ -1,4 +1,4 @@
-import "../scss/components/btn-component.scss"
+import "../scss/components/generic/btn-component.scss"
 import { HashLink as Link } from 'react-router-hash-link';
 
 function Btn({content, inverse, slug}){

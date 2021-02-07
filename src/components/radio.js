@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import "../scss/components/radio-component.scss"
+import "../scss/components/generic/radio-component.scss"
 
 function Input({placeholder}){
 

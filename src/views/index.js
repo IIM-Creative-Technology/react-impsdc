@@ -4,21 +4,20 @@ import {Helmet} from "react-helmet";
 
 //components
 import Btn from "../components/btn";
-import Input from "../components/input";
+import TextInput from "../components/textInput";
 import Weather from "../components/weather";
 
 //scss
 import "../scss/views/container-component.scss";
-import "../scss/views/banner-component.scss";
-import "../scss/views/weather-component.scss";
-import { useState, useEffect } from "react";
-import SelectInput from "../components/input"
+import "../scss/views/homepage/banner-component.scss";
+import "../scss/views/homepage/weather-component.scss"
 
-export default class ParentComponent extends React.Component {
+export default class IndexPage extends React.Component {
 
-  state = { city: '' }
+ state = {city : ''}
 
-  handleCity = (cityValue) => {
+  passCity = (cityValue) => {
+      console.log(cityValue)
       this.setState({city: cityValue});
   }
 
@@ -44,8 +43,8 @@ export default class ParentComponent extends React.Component {
         <section className="weather-component" id="weather">
           <h3 className={"title-weather"}>Search the <span>Weather</span> for any cities in the <span>world</span> !</h3>
             <div className="wrapper-input">
-             {/*  <Input placeholder="Mexico" onSelectCity={this.handleCity}/> */}
-             {/*  <Weather /> */}
+           {/*    <TextInput placeholder="Mexico" onChange={this.passCity}/> */}
+              <Weather placeholder="Mexico"/>
             </div>
         </section>
     </div>
