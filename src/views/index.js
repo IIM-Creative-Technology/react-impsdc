@@ -4,7 +4,6 @@ import {Helmet} from "react-helmet";
 
 //components
 import Btn from "../components/btn";
-import TextInput from "../components/textInput";
 import Weather from "../components/weather";
 
 //scss
