@@ -1,8 +1,10 @@
 import './scss/helpers/_variables.scss'
 import './scss/views/container-component.scss'
 import Routeur from "./routes/Routeur"
+import { useHistory } from "react-router-dom";
 
 export default function App() {
+  let history = useHistory();
   return (
    <div className="container">
      <Routeur />
