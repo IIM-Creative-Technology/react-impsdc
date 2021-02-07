@@ -4,7 +4,7 @@
     margin-top: 30px;
     background-color: rgba(80,10,210, 0.1);
     border-radius: $radius;
-
+    padding:20px;
     .city-title{
         font-size: 3rem;
         margin: 40px;
@@ -12,11 +12,17 @@
         letter-spacing: $letter-spacing-normal;
     }
 
+    .item-description{
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+
     .wrapper-result{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        
 
         .item-result{
             width: 150px;
