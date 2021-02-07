@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet"
 import "../scss/helpers/reset.scss"
 
 const QuizzPage = (data) => (
-  <div class="quizz">
+  <div className="quizz">
       <Helmet>
         <html lang="en" />
         <title>Quiz Paul Santamaria</title>
