@@ -2,7 +2,6 @@ import React from "react"
 import axios from "axios"
 import "../scss/components/weather/weather-result-component.scss"
 import windLogo from "../static/wind.svg"
-const logo = require("../static/wind.svg");
 
 export default class Weather extends React.Component {
     constructor(props) {
@@ -22,7 +21,11 @@ export default class Weather extends React.Component {
 
     fetchData = () => {
          setTimeout(() => {
-            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.field.value}&appid=af7c7272c5f0d3258228ce914b1873a5`)
+            let instance = axios.create();
+                delete instance.defaults.headers.common['Accept'];
+                delete instance.defaults.headers.common['X-Requested-With'];
+                delete instance.defaults.headers.common['X-CSRF-TOKEN'];
+            instance.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.field.value}&appid=${process.env.REACT_APP_WEATHER_APP_ID}`)
                 .then((res) => {
                     if(res){
                         this.setState({

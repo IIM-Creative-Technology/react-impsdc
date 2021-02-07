@@ -1,4 +1,5 @@
 import QuizzCardList from "../../components/QuizzPlayer/QuizzCardList";
+import Header from "../../components/header"
 const QuizzList = () => {
     return(
         <div>

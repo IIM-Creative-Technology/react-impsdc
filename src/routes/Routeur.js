@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import index from "../views/index";
-import quizz from "../views/Quizz";
 import login from "../views/Login";
 import QuizzList from "../views/QuizzPlayer/QuizzList.js";
 import QuizzDetails from "../views/QuizzPlayer/QuizzDetails.js";
@@ -13,7 +12,6 @@ const Routeur = () => (
     <Switch>
       <Route  exact path='/' component={index} />
       <Route  exact path='/login' component={login} />
-      <Route  exact path='/quizz' component={quizz} />
       <Route  exact path='/quizz/list' component={QuizzList} />
       <Route  exact path='/quizz/details/:quizzId' component={QuizzDetails} />
       <Route  exact path='/quizz/player/:quizzId' component={QuizzPlayer} />
