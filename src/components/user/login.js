@@ -1,9 +1,11 @@
 import React from "react";
 import "../../scss/components/user/login-component.scss";
 import "../../scss/components/generic/form-component.scss";
+import TextInput from "../textInput";
 import Btn from "../btn";
 import axios from "axios"
 import md5 from "md5";
+import { useHistory } from "react-router-dom";
 
 export default class LoginForm extends React.Component {
     constructor(props) {
@@ -16,6 +18,9 @@ export default class LoginForm extends React.Component {
                 description:""
             }
         }
+    }
+    componentDidMount() {
+        
     }
 
     onChange = (e) => {
@@ -37,6 +42,7 @@ export default class LoginForm extends React.Component {
                     console.log(res)
                     if(res.data.success){
                         localStorage.setItem('player', JSON.stringify({accessToken: res.data.accessToken, player: res.data.player}))
+                        this.props.history.push('/quizz/list')
                     }
                     else{
                         this.setState({

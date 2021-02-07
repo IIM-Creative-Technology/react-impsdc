@@ -12,6 +12,7 @@ const TopBar = ({currentQuestion, totalNbQuestions, quizzTitle}) => {
 }
 
 export default class QuizzPlayer extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -60,6 +61,7 @@ export default class QuizzPlayer extends React.Component {
 
 
     componentDidMount() {
+        if(!localStorage.getItem('player')) this.props.history.push('/login')
         axios.get(`/quizz/${this.props.match.params.quizzId}`)
             .then(async response => {
                 if (!response.data.data) this.props.history.push('/quizz/list')

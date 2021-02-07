@@ -15,6 +15,7 @@ export default class QuizzResults extends React.Component {
     }
 
     componentDidMount() {
+        if(!localStorage.getItem('player')) this.props.history.push('/login')
         console.log(this.props)
         axios.get(`/playerScore/${this.props.match.params.playerScoreId}`)
         .then((response) => {

@@ -45,6 +45,7 @@ class QuizzDetails extends React.Component {
     }
 
     componentDidMount() {
+    if(!localStorage.getItem('player')) this.props.history.push('/login')
         console.log("I will get called once the page gets loaded");
         this.setState({...this.state, isFetching: true});
         axios.get(`/quizz/${this.props.match.params.quizzId}`)
