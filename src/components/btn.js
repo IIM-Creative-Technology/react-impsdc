@@ -1,16 +1,14 @@
-import React, {useEffect, useState} from "react"
-import "../scss/components/btn-component.scss"
+import "../scss/components/generic/btn-component.scss"
+import { HashLink as Link } from 'react-router-hash-link';
 
-function Btn(){
-
+function Btn({content, inverse, slug}){
     return (
         <div>
-            <button class="main-btn-component" link="/">
-                Cliquer ici
-            </button>
+            <Link className={ inverse ? "main-btn-component inverse" : "main-btn-component"} to={slug}>
+                {content}
+            </Link>
         </div>
     )
 }
-
 
 export default Btn;
